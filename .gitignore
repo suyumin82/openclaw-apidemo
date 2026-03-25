@@ -1,0 +1,6 @@
+node_modules
+.env
+dist
+
+# Trello secrets
+scripts/trello/.env
