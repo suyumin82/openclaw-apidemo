@@ -48,6 +48,11 @@ src/
 - Register the route in `src/routes/index.js` (e.g., `router.use('/users', usersRoutes)`).
 - Add service/data layers as needed for business logic or database access.
 
+## Endpoints
+
+- `GET /api/health` — service heartbeat
+- `GET /api/helloworld?name=Jane` — returns `{ "message": "Hello Jane" }` (name defaults to World when omitted).
+
 ## Health Check
 
 `GET /api/health` returns uptime, environment, and timestamp so platforms can monitor the service.
