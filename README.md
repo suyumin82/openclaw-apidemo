@@ -56,3 +56,17 @@ src/
 ## Health Check
 
 `GET /api/health` returns uptime, environment, and timestamp so platforms can monitor the service.
+
+## Request and Response Logging
+
+The app now logs both inbound requests and outbound responses to the console.
+
+- enabled by default with `ENABLE_REQUEST_RESPONSE_LOGGING=true`
+- logs method, path, query, params, request body, response status, response body, and duration
+- intended for development and debugging
+
+Disable it by setting:
+
+```bash
+ENABLE_REQUEST_RESPONSE_LOGGING=false
+```
