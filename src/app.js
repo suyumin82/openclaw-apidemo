@@ -3,6 +3,7 @@ const cors = require('cors')
 const helmet = require('helmet')
 const morgan = require('morgan')
 const routes = require('./routes')
+const requestResponseLogger = require('./middlewares/requestResponseLogger')
 const { notFoundHandler, errorHandler } = require('./middlewares/errorHandler')
 
 const app = express()
@@ -12,6 +13,7 @@ app.use(cors())
 app.use(express.json({ limit: '1mb' }))
 app.use(express.urlencoded({ extended: true }))
 app.use(morgan('combined'))
+app.use(requestResponseLogger)
 
 app.get('/', (req, res) => {
   res.json({ message: 'Welcome to the API boilerplate' })
